@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/contentPanel"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.zs.wanandroid.ui.main.MainActivity">
 
-    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/frameLayout"/>
 
-
-    <Button
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="设置透明壁纸"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        android:text="相机拍照"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
-
-</android.support.constraint.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@drawable/bottom_navigation_item_selector"
+        app:itemTextColor="@drawable/bottom_navigation_item_selector"
+        app:menu="@menu/main_bottom_navigation" />
+</LinearLayout>
